@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 {% extends "base.html" %}
 {% load static %}
 {% load bag_tools %}
@@ -24,7 +25,6 @@
 
         <div class="row">
             <div class="col">
-
                 {% if bag_items %}
                     <div class="d-block d-md-none">
                         <div class="row">
@@ -67,12 +67,13 @@
                             <thead class="text-black">
                                 <tr>
                                     <th scope="col">Product Info</th>
-                                    <th scope="col"></th> <!-- Blank: Product info spends two columns -->
+                                    <th scope="col"></th>
                                     <th scope="col">Price</th>
                                     <th scope="col">Qty</th>
                                     <th scope="col">Subtotal</th>
                                 </tr>
                             </thead>
+
                             {% for item in bag_items %}
                                 <tr>
                                     <td class="p-3 w-25">
@@ -113,7 +114,6 @@
                         <span class="text-uppercase">Keep Shopping</span>
                     </a>
                 {% endif %}
-
             </div>
         </div>
     </div>
@@ -126,7 +126,6 @@
         window.scrollTo(0,0)
     })
 </script>
-    
 {% include 'products/includes/quantity_input_script.html' %}
 
 <script type="text/javascript">
@@ -146,9 +145,8 @@
 
         $.post(url, data)
          .done(function() {
-            location.reload();
-        });
+             location.reload();
+         });
     })
 </script>
-
 {% endblock %}
